@@ -1,0 +1,1 @@
+This is a flask interactive database that implements the edit/delete functionality introduced in Ch. 9 of the Real Python second course. Additional format experimentation with HTML and CSS is also performed. 

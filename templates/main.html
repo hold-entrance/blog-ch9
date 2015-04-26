@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block content %}
+  <h2>Welcome to the Hold-Entrance Soccer Stats Interactive DB!</h2>
+  <p><a href="/logout">Logout</a></p>
+    <h3>Add a new player entry to the database:</h3>
+    <form action="{{ url_for('add') }}" method="post" class="add">
+        <p><label><strong>Season (yyyy-yyyy):</strong></label>
+        <input name="season" type="text"></p>
+        <p><label><strong>Player (last, first):</strong></label>
+        <input name="player" type="text"></p>
+        <p><label><strong>Club (e.g. Barcelona, Manchester United):</strong></label>
+        <input name="club" type="text"></p>
+        <p><label><strong>Competition (e.g. Barclays Premier League, UEFA Champions League):</strong></label>
+        <input name="competition" type="text"></p>
+        <p><label><strong>Goals:</strong></label>
+        <input name="goals" type="integer"></p>
+        <p><label><strong>Assists:</strong></label>
+        <input name="assists" type="integer"></p>
+        <input class="button" type="submit" value="Save">
+     </form>
+  <br/>
+  <br/>
+  <h3>Soccer Stats:</h3>
+  {% for p in posts %}
+    <strong>Season:</strong> {{ p.season }} <br/>
+    <strong>Player:</strong> {{ p.player }} <br/>
+    <strong>Club:</strong> {{ p.club }} <br/>
+    <strong>Competition:</strong> {{ p.competition }} <br/>
+    <strong>Goals:</strong> {{ p.goals }} <br/>
+    <strong>Assists:</strong> {{ p.assists }} <br/>
+    <br/>
+{% endblock %}
+
